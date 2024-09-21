@@ -1,0 +1,107 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Raleway', sans-serif;
+    background-color: #fff;
+  }
+  
+  .text-container {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .text-container h1{
+    margin: 0;
+    font-size: 100px;
+    color: rgba(225,225,225, .01);
+    background-image: url("https://th.bing.com/th/id/OIP.biuKElBK2w7pIwLycnFb9QHaEK?rs=1&pid=ImgDetMain");
+    background-repeat: repeat;
+    -webkit-background-clip:text;
+    animation: animate 15s ease-in-out infinite;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 900;
+  }
+  
+  .text-container h3{
+    margin: 0;
+    font-size: 30px;
+    color: rgba(225,225,225, .01);
+    background-image: url("https://th.bing.com/th/id/OIP.biuKElBK2w7pIwLycnFb9QHaEK?rs=1&pid=ImgDetMain");
+    background-repeat: repeat;
+    -webkit-background-clip:text;
+    animation: animate 15s ease-in-out infinite;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 900;
+  }
+    @keyframes animate {
+      0%, 100% {
+        background-position: left top;
+      }
+      25%{
+        background-position: right bottom;
+       }
+      50% {
+        background-position: left bottom;
+      }
+      75% {
+        background-position: right top;
+      }   
+  }
+
+
+
+
+
+  
+@media (max-width: 1500px) {
+    .text-container h1{
+        font-size: 100px;
+      }
+}
+
+
+@media (max-width: 1020px) {
+    .text-container h1{
+        font-size: 95px;
+      }
+}
+
+@media (max-width: 910px) {
+    .text-container h1{
+        font-size: 90px;
+      }
+ 
+}
+
+@media (max-width: 767px) {
+    .text-container h1{
+        font-size: 80px;
+      }
+   
+  
+}
+
+@media (max-width: 607px) {
+    .text-container h1{
+        font-size: 75px;
+      } 
+}
+
+@media (max-width: 457px) {
+    .text-container h1{
+        font-size: 60px;
+      }
+}
+
+
+@media (max-width: 550px) {
+    .text-container h1{
+        font-size: 50px;
+      }
+
+}

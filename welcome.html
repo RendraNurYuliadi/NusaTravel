@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shorcut icon" type="x-icon" href="img/map_7997622.png">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Nusa-Travel</title>
+        <link rel="stylesheet" href="css/welcome.css">
+        <link href="https://fonts.googleapis.com/css?family=Raleway:900" rel="stylesheet">
+      </head>
+      
+      <body>
+        <div class="text-container">
+          <h1 id="animated-text">Nusa - Travel</h1>
+          <!-- <h3>Explore the Wonders of Indonesia, One Journey at a Time</h3> -->
+          <!-- <img src="img/destinations-1.jpg" alt=""> -->
+        </div>
+      </body>
+
+
+      <script>
+          document.addEventListener('DOMContentLoaded', function() {
+            // Fungsi untuk menampilkan teks satu per satu
+            function typeWriter(text, i, callback) {
+                if (i < text.length) {
+                    document.getElementById("animated-text").innerHTML = text.substring(0, i + 1) + '<span aria-hidden="true"></span>';
+                    setTimeout(function() {
+                        typeWriter(text, i + 1, callback);
+                    }, 100);
+                } else if (typeof callback == 'function') {
+                    // Panggil callback setelah teks selesai ditampilkan
+                    callback();
+                }
+            }
+
+            // Panggil fungsi typeWriter untuk memulai animasi teks
+            var text = document.getElementById("animated-text").textContent;
+            typeWriter(text, 0, function() {
+                // Alihkan ke index.html setelah teks selesai ditampilkan
+                window.location.href = 'index.html';
+            });
+        });
+    </script>
+</body>
+</html>

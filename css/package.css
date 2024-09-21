@@ -1,0 +1,1087 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    text-transform: capitalize;
+    box-sizing: border-box;
+    transition: all .3s ease;
+    text-decoration: none;
+}
+
+
+:root {
+    --dark-green: #112a34;
+    --green-color: #004047;
+    --white-color: #fff;
+}
+
+::selection {
+    background: var(--green-color);
+    color: var(--white-color);
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
+html {
+    font-size: 90%;
+}
+
+section {
+    padding: 0 8rem;
+    width: 100%;
+}
+
+.label {
+    font-size: 1.1rem;
+    color:  #666;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.heading {
+    font-size: 3rem;
+    margin-top: 1rem;
+}
+
+/* Home Section Styles */
+section.home {
+    padding: 1rem;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.home .home-box {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    border-radius: 10px;
+    filter: brightness(0.8); /* Optional: Add a filter for better text readability */
+}
+
+
+.switch-buttons {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 90%; /* Atur sesuai keinginan Anda */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2; /* Pastikan tombol switch berada di atas konten lainnya */
+}
+
+.switch-buttons button {
+    background: rgba(255, 255, 255, 0.7);
+    border: none;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.switch-buttons button.active {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+
+/* Navigation Bar */
+.navbar {
+    width: 100%;
+    height: 65px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 4rem;
+    position: fixed; /* Make the navbar fixed */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensure it stays above other elements */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease-in-out;
+}
+
+.navbar.scrolled {
+    background: rgba(0, 0, 0, 0.7); /* Change background on scroll */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.navbar .logo .bar {
+    font-size: 1.35rem;
+    color: var(--white-color);
+    cursor: pointer;
+    display: none;
+}
+
+.navbar .logo .bar:hover {
+    color: var(--green-color);
+}
+
+.navbar .logo h3 {
+    color: var(--white-color);
+    font-weight: 400;
+}
+
+.navbar .logo .logo-img{
+    display: none;
+}
+
+.navbar .menu {
+    display: flex;
+    gap: 3rem;
+}
+
+.navbar .menu .close {
+    display: none;
+    cursor: pointer;
+    color: var(--white-color);
+    font-size: 1.35rem;
+}
+
+.navbar .menu ul {
+    display: flex;
+    gap: 3rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+.navbar .menu ul li a {
+    color: var(--white-color);
+    font-weight: 400;
+    text-decoration: none;
+    position: relative; /* Necessary for positioning pseudo-element */
+    padding-bottom: 5px; /* Adds space for underline */
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+.navbar .menu ul li a:hover {
+    background: var(--white-color);
+    color:  var(--dark-green-color);
+    padding: 5px 10px;
+    box-shadow: 5px 10px 30px rgb(85 85 85 / 20%);
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+
+.navbar .signup-login {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.navbar .signup-login a {
+    color: var(--white-color);
+    padding: .3rem 1rem;
+    border-radius: 2rem;
+    text-decoration: none;
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+
+
+.navbar .signup-login a:last-child {
+    color: var(--white-color);
+    background: var(--green-color);
+    padding: .3rem 1rem;
+    border-radius: 2rem;
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+.navbar .signup-login a:hover {
+    background: var(--white-color);
+    color:  var(--dark-green-color);
+    padding: 5px 10px;
+    box-shadow: 5px 10px 30px rgb(85 85 85 / 20%);
+    border-radius: 2rem;
+    font-weight: 600;
+}
+
+.navbar .signup-login a:last-child:hover {
+    color: var(--white-color);
+    padding: 5px 10px;
+    background: #02636e;
+    font-weight: 600;
+}
+
+.back_button {
+    background: var(--dark-green);
+    display: none;
+    position: fixed;
+    bottom: 20px; /* Jarak dari bawah */
+    right: 20px;  /* Jarak dari kanan */
+    height: 45px;
+    width: 45px;
+    border-radius: 20%;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Agar selalu di atas elemen lain */
+}
+
+.back_button:hover{
+    transform: scale(1.1);
+    background: #000;
+}
+
+.back_button a span img {
+    height: 30px;
+    width: 30px;
+    margin: auto;
+}
+
+.show {
+    display: flex;
+}
+
+
+/* Sticky Navbar Style */
+.sticky {
+    background: var(--white-color);
+}
+
+.sticky .logo h3 {
+    color: var(--green-color);
+    font-weight: 600;
+}
+
+.sticky .logo .logo-img{
+    display: flex;
+}
+
+
+.sticky .menu ul li a {
+    color: var(--green-color);
+    font-weight: 600;
+}
+
+.sticky .signup-login a {
+    color: var(--green-color);
+    font-weight: 600;
+}
+
+.sticky .signup-login a:last-child {
+    font-weight: 600;
+}
+
+.sticky .logo .bar {
+
+    color: var(--green-color);
+}
+
+
+
+
+/* Content Section */
+.home .home-box .content {
+    width: 100%;
+    height: calc(100% - 65px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transform: translate(0, -65px);
+    z-index: 1;
+}
+
+.home .home-box .content h5 {
+    text-transform: uppercase;
+    color: var(--white-color);
+    font-size: .9rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    letter-spacing: 0.1em;
+}
+
+.home .home-box .content h1 {
+    font-size: 4rem;
+    max-width: 50rem;
+    color: var(--white-color);
+    text-align: center;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Optional: Add text shadow for better readability */
+}
+
+.home .home-box .content p {
+    color: #eee;
+    font-weight: 300;
+    max-width: 40rem;
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+}
+
+.home .home-box .content .search {
+    width: 100%;
+    max-width: 38rem;
+    height: 45px;
+    background: var(--white-color);
+    border-radius: 3rem;
+    display: flex;
+    align-items: center;
+    padding: .3rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.home .home-box .content .search i {
+    color: rgba(0, 0, 0, 0.5);
+    margin: 0 .6rem;
+}
+
+.home .home-box .content .search input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-weight: 400;
+    font-size: 1rem;
+    color: #333;
+    padding: 0.5rem;
+}
+
+.home .home-box .content .search button {
+    height: 100%;
+    padding: 0 1rem;
+    border-radius: inherit;
+    background: var(--green-color);
+    border: none;
+    outline: none;
+    color: var(--white-color);
+    font-weight: 400;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.home .home-box .content .search button:hover {
+    background: #02636e;
+}
+
+
+/* Animation Styles */
+.home .home-box .content h5, 
+.home .home-box .content h1, 
+.home .home-box .content p, 
+.home .home-box .content .search {
+    transform: translate(0, 100px);
+    opacity: 0;
+    transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+}
+
+.home .home-box .content h5,
+.home .home-box .content h1,
+.home .home-box .content p,
+.home .home-box .content .search {
+    transform: translate(0, 0);
+    opacity: 1;
+    transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+}
+
+/* travel section starts here  */
+
+.travel .container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4rem;
+    padding:  5rem 0;
+}
+
+.travel .container .box {
+    padding:  3rem;
+    text-align: center;
+    max-width: 30rem;
+    transform: translate(0, 100px);
+    opacity: 0;
+
+}
+
+.travel .container .box img {
+    height: 10rem;
+}
+
+.travel .container .box h4 {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+    margin-top: 2rem;
+    font-weight: 600;
+}
+
+.travel .container .box p {
+    color: #666;
+    text-align: justify;
+}
+
+/* travel section ends here  */
+
+
+/* package Section */
+
+.package-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, auto));
+    grid-gap: 2rem;
+    align-items: center;
+    margin-top: 5rem;
+    background: var(--white-color);
+    max-height: 1150px;
+    overflow-y: auto; /* Tambahkan properti ini untuk scroll vertikal */
+    scroll-behavior: smooth; /* Menambahkan animasi scroll yang halus */
+}
+
+.btn3{
+    height: 40px;
+    width: 80px;
+    background: var(--white-color);
+    color: var(--dark-green);
+    text-align: center;
+    padding-top: 7px;
+    font-weight: 600;
+    border-radius: 25px;
+    transition: ease-in-out .40s;
+
+}
+
+.btn3:hover{
+    transform: scale(1.1);
+    /* background: var(--green-color); */
+    font-weight: 700;
+    box-shadow: 5px 10px 30px rgb(85 85 85 / 20%);
+}
+
+.box {
+    background: var(--white-color);
+    border-radius: 10px;
+    transition: all 1s ease 0s; 
+    cursor: pointer;
+    /* max-width: 400px; */
+    /* padding: 10px; */
+    
+}
+
+.box:hover{
+    box-shadow: 5px 30px 56.1276px rgb(55 55 55 / 12%);
+    transform: translateY(-3px);
+}
+
+.thum {
+    
+    position: relative;
+    transition: all .3s cubic-bezier(.445, .05, .55, .95);
+    will-change: filter;
+    cursor: pointer;
+}
+  
+.thum img {
+   
+    width: 100%;
+    height: 400px;
+    border-radius: 10px;
+    object-fit: cover; 
+    /* transition: ease .40s; */
+}
+
+.thum h3 {
+    position: absolute;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: right;
+    color: var(--white-color);
+    top: 36px;
+    right: 40px;
+}
+
+.dest-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    
+}
+
+.dest-content .location .tipe{
+    display: flex; gap: 10px;
+}
+
+.location .stars img{
+    padding-top: 4px;
+}
+
+.location h4 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.location p {
+    font-size: 15px;
+    color: var(--second-color);
+}
+.custom-button {
+    background-color: var(--green-color); 
+    color: var(--white-color); 
+    padding: 15px 32px; 
+    font-weight: 600;
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block; 
+    font-size: 16px; 
+    margin: 4px 2px; 
+    border: none; 
+    border-radius: 5px;
+    cursor: pointer; 
+    transition: ease .40s;
+}
+
+
+.custom-button:hover {
+    transform: scale(1.1);
+    background-color: black; 
+}
+
+.options-content{
+    display: flex;
+    justify-content: right;
+}
+
+/* Search Box Styling */
+.search-box {
+    display: flex;
+    justify-content: flex-end; /* Posisi elemen ke kanan */
+    align-items: center; /* Vertikal rata tengah */
+    margin: 20px 0;
+}
+
+.search-box input[type="text"] {
+    padding: 10px 15px; /* Padding untuk mengatur ruang input */
+    font-size: 16px;
+    font-weight: 600;
+    width: 400px;
+    height: 49px;
+    background: var(--white-color);
+    border-radius: 25px 0 0 25px; /* Membulatkan hanya sisi kiri */
+    border: none; /* Border dengan warna */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease; /* Transition untuk efek fokus */
+    box-sizing: border-box; /* Untuk memastikan padding dan border tidak mempengaruhi lebar */
+}
+
+.search-box input[type="text"]:focus {
+    outline: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow lebih besar saat fokus */
+    width: 420px; /* Perbesar lebar saat fokus */
+}
+
+/* Styling untuk ikon pencarian */
+.search-box img {
+    width: 50px; /* Lebar ikon */
+    height: 50px; /* Tinggi ikon */
+    margin-left: -4px; /* Mengatur margin untuk mengurangi jarak */
+    padding: 5px; /* Padding dalam ikon */
+    border-radius: 0 25px 25px 0; /* Membulatkan hanya sisi kanan */
+    background: var(--white-color); /* Warna background ikon */
+    cursor: pointer; /* Cursor berubah menjadi pointer */
+    transition: all 0.3s ease; /* Transition untuk efek hover */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow untuk ikon */
+}
+
+.search-box img:hover {
+    background: var(--white-green); /* Ubah warna background saat hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow lebih besar saat hover */
+}
+
+
+/* Styling untuk ikon pencarian */
+/* 
+.search-box i  {
+
+    text-align: center;
+    align-items: center;
+    font-size: 30px;
+    width: 50px; 
+    height: 50px;
+    margin-left: -4px; 
+    padding: 5px; 
+    border-radius: 0 25px 25px 0; 
+    background: var(--white-color); 
+    cursor: pointer;
+    transition: all 0.3s ease; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  
+}
+
+.search-box i:hover {
+    background: var(--white-green); /* Ubah warna background saat hover 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow lebih besar saat hover 
+}  */
+
+
+.title {
+    text-align: left;
+}
+
+.title h2 {
+    font-size: 35px;
+    line-height: 1.2;
+} 
+.sub {
+    color: var(--green-color);
+    font-weight: 600;
+}
+/* Dropdown Styling */
+.dropdown {
+    display: flex;
+    justify-content: flex-end; /* Posisi elemen ke kanan */
+    align-items: center; /* Vertikal rata tengah */
+    margin: 20px 0;/* Space between input and dropdown */
+}
+
+.dropdown select {
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    height: 50px;
+    background: var(--white-color);
+    border-radius: 25px; /* Rounded corners */
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer; /* Pointer cursor on hover */
+    width: 230px; /* Width of dropdown */
+}
+
+
+.dropdown select:focus {
+    outline: none;
+    font-size: larger;
+    border-color: var(--dark-green);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+/* Endpackage Section */
+
+
+
+/* Newsletter  */
+
+.newsletter {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    grid-gap: 3rem;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.newsletter h2 {
+    font-size:40px;
+    margin-bottom: 5px;
+    font-weight: bolder;
+}
+
+.newsletter p {
+    font-size: 15px;
+    color: rgb(87, 87, 87);
+    line-height: 30px;
+    font-weight: 500;
+}
+
+.newsletter form {
+    max-width: 100%;
+    width: 450px;
+    position: relative;
+}
+
+.newsletter form input:first-child {
+    display: inline-block;
+    width: 100%;
+    padding: 20px 150px 20px 30px;
+    box-shadow: 5px 10px 30px rgb(85 85 85 / 20%);
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    /* transition: ease .40s; */
+}
+
+.newsletter form input:last-child {
+    display: inline-block; 
+    position: absolute;
+    outline: none;
+    border: none;
+    padding: 14px 30px;
+    border-radius: 10px;
+    background: var(--green-color);
+    font-weight: 600;
+    color: var(--white-color);   
+    top: 6px;
+    right: 6px;
+    cursor: pointer;
+    transition: ease .40s;
+}
+
+.newsletter form input:last-child:hover {
+    transform: scale(1.1);
+}
+
+/* end Newsletter */
+
+
+
+/* footer section starts here  */
+
+footer {
+    padding:  1rem;
+    width: 100%;
+}
+
+footer .footer {
+    background: var(--dark-green);
+    border-radius: .7rem;
+    padding: 6rem 7rem;
+    padding-bottom: 1rem;
+}
+
+footer .footer .container {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--green-color);
+    gap: 2rem;
+}
+
+footer .footer .container .detail {
+    max-width: 32rem;
+}
+
+.about-us-title{
+    border-bottom: 2px solid var(--green-color);
+}
+
+footer .footer .container .detail h3 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    color: var(--white-color);
+}
+
+footer .footer .container .detail p {
+    line-height: 1.6;
+    color: rgb(255 255 255/80%);
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+footer .footer .container .detail h5 {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--white-color);
+}
+
+footer .footer .container .detail a {
+    color: rgb(255 255 255/80%);
+    font-size: .9rem;
+    border-bottom: 2px solid #00cee4;
+    padding: 1px 0;
+    display: inline-block;
+}
+
+footer .footer .container .detail .social {
+    display: flex;
+    gap: .8rem;
+    margin-top: 1rem;
+}
+
+footer .footer .container .detail .social a {
+    border: none;
+    font-size: 1.3rem;
+    color: var(--white-color);
+}
+
+footer .footer .container h4 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: .5rem;
+    color: var(--white-color);
+}
+
+footer .footer .container li {
+    list-style: none;
+    margin-top: 1rem;
+}
+
+footer .footer .container a {
+    color: rgb(255 255 255/80%);
+}
+
+footer .footer .container a:hover {
+    color: var(--white-color);
+}
+
+footer .footer .container span {
+    color: #000;
+    background: #00cee4;
+    font-size: .9rem;
+    padding: .1rem .5rem;
+    border-radius: .3rem;
+    font-weight: 500;
+}
+
+footer .footer .copyright {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    font-size: .9rem;
+    color: rgb(255 255 255/80%);
+    text-align: center;
+}
+
+footer .footer .copyright a {
+    color: rgb(255 255 255/80%);
+    margin-left: 1rem;
+    text-align: center;
+}
+/* footer section ends here  */
+/* media section starts here  */
+@media (max-width: 1020px) {
+    html {
+        font-size: 85%;
+    }
+
+    section {
+        padding: 0 2rem;
+    }
+
+    footer .footer {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 910px) {
+
+    .home .home-box nav {
+        padding: 0 1rem;
+    }
+
+    .home .home-box nav .menu ul {
+        gap: 2rem;
+    }
+
+    .destinations .container .container-box {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    footer .footer .container {
+        flex-direction: column;
+    }
+
+    .options-content{
+        flex-direction: column;
+        justify-content: right;
+    }
+
+    .dropdown select {
+        width: 100%;
+    }
+
+    .newsletter form {
+        max-width: 100%;
+        width: auto;
+       
+    }
+}
+
+@media (max-width: 767px) {
+
+    .heading {
+        font-size: 2rem;
+    }
+    .home .home-box nav .menu {
+        display: none;
+    }
+
+    .home .home-box nav .logo .bar {
+        display: block;
+    }
+
+    .home .home-box nav .menu.active {
+        display: block;
+        position: absolute;
+        left: -1.5rem;
+        top: -1.5rem;
+        width: 435px;
+        height: 753px;
+        background: var(--dark-green);
+        opacity: 90%;
+        display: flex;
+        align-items: center;
+        padding: 0 3rem;
+        transition: background 0.3s ease-in-out;
+        border-radius: 0 0 75px 0;
+    }
+
+    .home .home-box nav .sticky.active {
+        background: var(--white-color);
+        opacity: 90%;
+    }
+    /* .home .home-box nav .menu.active {
+        display: block;
+        position: absolute;
+        left: -1.5rem;
+        top: -1.5rem;
+        width: 100vw;
+        height: 100vh;
+        background: var(--dark-green);
+       
+        display: flex;
+        align-items: center;
+        padding: 0 3rem;
+        transition: background 0.3s ease-in-out;
+    }
+
+    .home .home-box nav .sticky.active {
+        background: var(--white-color);
+        opacity: 90%;
+    } */
+
+    .home .home-box nav .menu .close {
+        display: block;
+        position: absolute;
+        left: 3rem;
+        top: 3rem;
+        cursor: pointer;
+        color: var(--white-color);
+        font-size: 2rem;
+    }
+  
+    /* After: Sticky Style for Close Button */
+    .home .home-box nav .menu.sticky .close {
+        display: block;
+        position: absolute;
+        left: 3rem;
+        top: 3rem;
+        cursor: pointer;
+        color: var(--green-color); /* Ubah warna ketika sticky */
+        font-size: 2rem;
+        transition: color 0.3s ease-in-out; /* Efek transisi untuk perubahan warna */
+    }
+
+
+    .home .home-box nav .menu .close:hover {
+        color: darkgrey;
+    }
+
+    .home .home-box nav .menu ul {
+        flex-direction: column;
+        font-size: 1.3rem;
+        gap: 1rem;
+        
+    }
+
+    /* .home .home-box nav .menu ul:hover li a {
+        color:darkgrey;
+    } */
+
+    
+
+    .home .home-box nav .menu ul li a:hover {
+        border-bottom: 3px solid darkgrey;
+        
+    }
+
+    .home .home-box .content {
+        padding: 2rem;
+    }
+
+    .travel .container {
+        flex-direction: column;
+        padding: 4rem 0;
+        gap: 4rem;
+    }
+
+    .travel .container .box img {
+        height: 6rem;
+    }
+
+    .destinations .container .container-box .content {
+        font-size: .8rem;
+    }
+
+    .feedback .container p {
+        font-size: .9rem;
+    }
+
+   
+  
+}
+
+@media (max-width: 607px) {
+    .home .home-box .content h1 {
+        font-size: 2rem;
+    }
+
+    .home .home-box .content p {
+        font-size: .8rem;
+    }
+}
+
+@media (max-width: 457px) {
+    .article .container .latest-article,
+    .article .container .more-article {
+        width: 100%;
+        flex: 1 0 250px;
+    }
+
+    .article .container .more-article .box img {
+        width: 100px;
+        height: 85px;
+    }
+
+    .article .container .more-article .text h3 {
+        font-size: 1.1rem;
+    }
+}
+/* media section starts here  */
